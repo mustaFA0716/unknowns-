@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Miss Waniya 🎉</title>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(45deg, #ff6b6b, #f7d794, #70a1ff);
+  background-size: 300% 300%;
+  animation: bgAnimation 8s infinite;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+@keyframes bgAnimation {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+.photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid white;
+  object-fit: cover;
+  margin-top: 15px;
+  animation: glow 2s infinite alternate, float 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 10px white; }
+  to { box-shadow: 0 0 25px #ff4757; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.cake {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #ff4757;
+  margin-top: 15px;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday Miss Waniya 🎉</h1>
+
+<img src="" class="photo">
+
+<div class="cake">🎂</div>
+
+<p id="msg">Tap for surprise 💌</p>
+
+<button onclick="celebrate()">Tap Me 🎁</button>
+
+<!-- 🎵 AUDIO -->
+<audio id="bdaySong">
+  <source src="https://www2.cs.uic.edu/~i101/SoundFiles/HappyBirthday.mid" type="audio/midi">
+</audio>
+
+<script>
+function celebrate() {
+  document.getElementById("msg").innerHTML =
+  "Dear Mis Waniya,<br><br>May your day be filled with happiness, laughter, and all your favorite things! 🎈🎉<br><br>You have such a sharp mind, a great confidence, and a truly special personality that makes you stand out in the best way.<br><br>Stay blessed and keep smiling always 😊✨";
+
+  // play song 🎵
+  document.getElementById("bdaySong").play();
+
+  // confetti 🎊
+  confetti({
+    particleCount: 180,
+    spread: 110,
+    origin: { y: 0.6 }
+  });
+}
+</script>
+
+</body>
+</html>
